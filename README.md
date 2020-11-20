@@ -1,6 +1,8 @@
 # Movies App React
 
-Link: https://movies-app-react-2020.netlify.app/
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f6a6987a-e702-474e-a81f-ecb515d5edeb/deploy-status)](https://app.netlify.com/sites/movies-app-react-2020/deploys)
+
+https://movies-app-react-2020.netlify.app/
 
 ## Overview
 
