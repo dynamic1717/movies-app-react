@@ -1,13 +1,337 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #22254b;
+  color: #ffffff;
+}
+
+button {
+  outline: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #373b69;
+  padding: 1rem;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 1400px;
+  margin: 0 auto;
+}
+
+header h2 {
+  margin: 0;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+
+.menu li {
+  margin-right: 1.5rem;
+}
+
+.link-btn {
+  color: #fff;
+  text-decoration: none;
+}
+
+.link-btn:hover {
+  color: #c2c6ff;
+}
+
+.link-btn-center {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 200px;
+  font-size: 1.2rem;
+}
+
+.search {
+  background-color: transparent;
+  border: 2px solid #222541;
+  border-radius: 50px;
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie {
+  margin: 1rem;
+  width: 300px;
+  background-color: #373b69;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+.movie:hover {
+  background-color: #434780;
+}
+
+.movie img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.movie-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.movie-info h3 {
+  margin: 0;
+  color: #fff;
+}
+
+.vote {
+  background-color: #222541;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.vote.green {
+  color: rgb(10, 194, 10);
+}
+
+.vote.orange {
+  color: orange;
+}
+
+.vote.red {
+  color: rgb(228, 37, 37);
+}
+
+.movie:hover .fav-btn {
+  visibility: visible;
+}
+
+.fav-btn {
+  visibility: hidden;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-color: transparent;
+  border: none;
+  color: #ffd000;
+  font-size: 2rem;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.1s ease-in;
+}
+.fav-btn:hover {
+  transform: scale(1.1);
+}
+.fav-btn.visible {
+  visibility: visible;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+@keyframes arrows {
+  0%,
+  100% {
+    color: white;
+    transform: translateY(0);
+  }
+  50% {
+    color: #3ab493;
+    transform: translateY(-20px);
+  }
+}
+
+.loading span {
+  --delay: 0s;
+  animation: arrows 1s var(--delay) infinite ease-in;
+}
+
+.loading p {
+  margin-left: 1rem;
+}
+
+.movie-section {
+  margin-top: 2rem;
+  background-color: #373b69;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.single-movie-container {
+  padding: 2rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  width: 1140px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  position: relative;
+}
+
+.single-movie-img {
+  width: 400px;
+  height: 600px;
+  margin-right: 2rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.single-movie-img img {
+  width: 100%;
+}
+
+.single-movie-info {
+  width: 600px;
+}
+
+.single-movie-info h2 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.single-movie-info iframe {
+  margin-top: 1rem;
+}
+
+.favorites {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.favorites h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.favorites-movie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  font-size: 1rem;
+  padding: 1rem;
+}
+.favorites-movie:hover {
+  background-color: #373b69;
+}
+
+.favorites-img {
+  width: 100px;
+  margin-right: 1rem;
+}
+
+.favorites-link {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.favorites-link:hover {
+  text-decoration: underline;
+}
+
+.favorites-remove-btn {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  border: 2px solid #222541;
+  border-radius: 50%;
+}
+.favorites-remove-btn:hover {
+  background-color: rgba(255, 0, 0, 0.4);
+  color: red;
+}
+.favorites-movie:hover .favorites-remove-btn {
+  visibility: visible;
+}
+
+.favorites-clear-btn {
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  margin-top: 2rem;
+  background-color: transparent;
+  border: 2px solid #373b69;
+  border-radius: 50px;
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.1s ease-in;
+}
+.favorites-clear-btn:hover {
+  background-color: rgba(255, 0, 0, 0.4);
+}
+
+.about {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #666886;
 }
